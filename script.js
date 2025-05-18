@@ -9,9 +9,9 @@ function update() {
   const minute = now.getMinutes();
   const hour = now.getHours() % 12;
 
-  const secondDeg = second * 6 + 15; // 360 / 60
-  const minuteDeg = minute * 6 + second * 0.1 + 90; // 360 / 60 + progress
-  const hourDeg = hour * 30 + minute * 0.5 + 3;     // 360 / 12 + progress
+  const secondDeg = (second+15) * 6; // 360 / 60
+  const minuteDeg = (minute+90) * 6 + second * 0.1 ; // 360 / 60 + progress
+  const hourDeg = (hour+3) * 30 + minute * 0.5;     // 360 / 12 + progress
 
   seconds.style.transform = `rotate(${secondDeg}deg)`;
   minutes.style.transform = `rotate(${minuteDeg}deg)`;

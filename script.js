@@ -8,12 +8,11 @@ function update() {
   let second = now.getSeconds();
   const minute = now.getMinutes();
   const hour = now.getHours() % 12;
-	console.log(second,hour)
-  const secondDeg = ((second)*6)%360+90; // 360 / 60
-  const minuteDeg = ((minute) * 6 + (second) * 0.1 )%360+90; // 360 / 60 + progress
-  const hourDeg = ((hour) * 30 + (minute) * 0.5)%360+90;     // 360 / 12 + progress
+  const secondDeg = second * 6+90; // 360 / 60
+  const minuteDeg = minute * 6+90; // 360 / 60 + progress
+  const hourDeg = (hour * 30 + minute * 0.5)%360+90;     // 360 / 12 + progress
 
-  seconds.style.transform = `rotate(${secondDeg}deg)`;
+  seconds.style.transform = `rotate(${(secondDeg)}deg)`;
   minutes.style.transform = `rotate(${minuteDeg}deg)`;
   hours.style.transform = `rotate(${hourDeg}deg)`;
 }
